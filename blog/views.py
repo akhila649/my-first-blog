@@ -1,22 +1,23 @@
 from django.shortcuts import render
 from .models import Post
 from django.utils import timezone
+from django.shortcuts import render,get_object_or_404
 
-def main(request):
-    posts = Post.objects.filter(published_date_lte=timezone.now()).order_by('published_date')
+def main(request, pk):
+    posts = get_object_or_404(Post, pk=pk)
     return render(request,'blog/main.html',{'posts': posts})
 
 
 def home(request):
-    posts = Post.objects.filter(published_date__lte=timezone.now()).order_by('published_date')
+    posts = get_object_or_404(Post, pk=pk)
     return render(request,'blog/home.html',{'posts': posts})
 
 def upload(request):
-    posts = Post.objects.filter(published_date__lte=timezone.now()).order_by('published_date')
-    return render(request, 'blog/upload.html',{'posts': form})
+    posts = get_object_or_404(Post, pk=pk)
+    return render(request, 'blog/upload.html',{'posts': posts})
 
 def feedback(request):
-    posts = Post.objects.filter(published_date__lte=timezone.now()).order_by('published_date')
-    return render(request, 'blog/feedback.html',{'posts': form})
+    posts = get_object_or_404(Post, pk=pk)
+    return render(request, 'blog/feedback.html',{'posts': posts})
 
     
