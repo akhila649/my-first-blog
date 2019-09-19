@@ -1,0 +1,68 @@
+{% extends 'blog/base.html' %}
+
+{% block content %}
+<html>
+    <head>
+  
+    <link rel="stylesheet" type="text/css" href="css/style3.css">
+   
+    <title>feedback form</title>
+    <style>
+  table{
+      border:3px solid white;
+      padding:5px;
+  border-spacing:20px;
+  }
+  </style>
+    </head>  
+  <body>
+  
+  <div class="a">
+  
+  <h1>FEEDBACK FORM</h1><br>
+  </div>
+  <form>
+      
+       <table>		
+             <tr>			
+                 <td>				
+                     NAME:			
+                 </td>			
+                  <td>				
+                     <input type="text" name="">			
+                  </td>		
+             </tr>
+              <tr>
+                   <td>				
+                     PHONE NO:			
+                   </td>			
+                   <td>				
+                    <input type="text" phone no="">			
+                   </td>		
+             </tr>
+             <tr>
+                  <td>
+                      EMAIL-ID:
+                  </td>
+                  <td>
+                      <input type="text" email-id="">
+                  </td>	
+              </tr>
+              <tr>
+                  <td>
+                      COMMENTS:
+                      
+                  </td>
+                  <td>
+                  <textarea id="comments" style="height:100px"> </textarea>
+                  </td>	
+              </tr>
+              
+              
+          </table>
+          <br><br>
+          <div>
+          <button>Submit</button>
+          </div>
+  </form>
+{% endblock %}
